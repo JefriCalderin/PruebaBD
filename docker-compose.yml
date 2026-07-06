@@ -1,0 +1,20 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: pg_riwi
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_DB: Jefri_cortissoz
+      POSTGRES_USER: jefrical
+      POSTGRES_PASSWORD: cortissoz2026
+
+    ports:
+      - "5482:5432"
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./data:/data
+
+volumes:
+  postgres_data:
